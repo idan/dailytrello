@@ -11,11 +11,11 @@
   var Promise = require('bluebird');
   var Trello = require('node-trello');
   var cron = require('cron-parser');
-  var moment = require('moment');
+  var moment = require('moment-timezone');
   var t = Promise.promisifyAll(new Trello(TRELLO_KEY, TRELLO_TOKEN));
 
 
-  var today = moment().startOf('day');
+  var today = moment().utc().tz('Asia/Jerusalem').startOf('day');
   var cronOptions = {
     currentDate: today,
     endDate: moment(today).endOf('day')
