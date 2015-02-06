@@ -10,27 +10,19 @@
 
   var Promise = require('bluebird');
   var Trello = require('node-trello');
-  var cron = require('cron-parser');
   var moment = require('moment-timezone');
   var t = Promise.promisifyAll(new Trello(TRELLO_KEY, TRELLO_TOKEN));
 
-
-  var today = moment().utc().tz('Asia/Jerusalem').startOf('day');
-  var cronOptions = {
-    currentDate: today,
-    endDate: moment(today).endOf('day')
-  };
+  var today = moment().utc().tz('Asia/Jerusalem').day()
 
   SCHEDULE.split(';').forEach(function(e, idx) {
     var entry = e.split(':');
-    var cronRecipe = entry[0];
+    var day = +entry[0];
     var cardId = entry[1];
     console.log("Considering " + entry + "...");
-    var interval = cron.parseExpression(cronRecipe, cronOptions);
-    try {
-      interval.next();
+    if (day === today) {
       console.log("   matched!");
-    } catch (err) {
+    } else {
       console.log("   didn't match, continuing.");
       return;
     }
