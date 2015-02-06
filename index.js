@@ -8,7 +8,7 @@
   var MEMBER_IDS = process.env.MEMBER_IDS;
   var SCHEDULE = process.env.SCHEDULE;
 
-  var Promise = require('Bluebird');
+  var Promise = require('bluebird');
   var Trello = require('node-trello');
   var cron = require('cron-parser');
   var moment = require('moment');
