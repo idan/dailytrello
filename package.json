@@ -1,0 +1,17 @@
+{
+  "name": "dailytrello",
+  "version": "0.0.1",
+  "description": "Clone daily todo cards in trello from templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Idan Gazit <idan@gazit.me>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.6",
+    "cron-parser": "^0.6.1",
+    "moment": "^2.9.0",
+    "node-trello": "^1.0.1"
+  }
+}
