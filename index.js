@@ -13,14 +13,15 @@
   var moment = require('moment-timezone');
   var t = Promise.promisifyAll(new Trello(TRELLO_KEY, TRELLO_TOKEN));
 
-  var today = moment().utc().tz('Asia/Jerusalem').startOf('day')
+  var today = moment().utc().tz('Asia/Jerusalem').startOf('day');
 
   SCHEDULE.split(';').forEach(function(e, idx) {
     var entry = e.split(':');
     var day = +entry[0];
     var cardId = entry[1];
     console.log("Considering " + entry + "...");
-    if (day === today.day()) {
+    var tomorrow = (today.day() + 1) % 7;
+    if (day === tomorrow) {
       console.log("   matched!");
     } else {
       console.log("   didn't match, continuing.");
