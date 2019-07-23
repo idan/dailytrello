@@ -20,8 +20,8 @@
     var day = +entry[0];
     var cardId = entry[1];
     console.log("Considering " + entry + "...");
-    var tomorrow = (today.day() + 1) % 7;
-    if (day === tomorrow) {
+    var targetDay = (today.day() + 3) % 7;
+    if (day === targetDay) {
       console.log("   matched!");
     } else {
       console.log("   didn't match, continuing.");
