@@ -13,7 +13,7 @@
   var moment = require('moment-timezone');
   var t = Promise.promisifyAll(new Trello(TRELLO_KEY, TRELLO_TOKEN));
 
-  var today = moment().utc().tz('Asia/Jerusalem').startOf('day');
+  var today = moment().utc().tz('America/Los_Angeles').startOf('day');
 
   SCHEDULE.split(';').forEach(function(e, idx) {
     var entry = e.split(':');
