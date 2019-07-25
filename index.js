@@ -30,7 +30,7 @@
 
     var trelloParams = {
       pos: 'top',
-      due: moment(today).add(44, 'hours'),
+      due: moment(today).add(73, 'hours'),
       idList: DESTINATION_LIST,
       idMembers: MEMBER_IDS,
       idCardSource: cardId
