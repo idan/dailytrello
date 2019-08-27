@@ -2,8 +2,6 @@
   'use strict';
   var TRELLO_KEY = process.env.TRELLO_KEY;
   var TRELLO_TOKEN = process.env.TRELLO_TOKEN;
-  var BOARD = process.env.BOARD_ID;
-  var TEMPLATE_LIST = process.env.TEMPLATE_LIST_ID;
   var DESTINATION_LIST = process.env.DESTINATION_LIST_ID;
   var MEMBER_IDS = process.env.MEMBER_IDS;
   var SCHEDULE = process.env.SCHEDULE;
@@ -15,7 +13,7 @@
 
   var today = moment().utc().tz('America/Los_Angeles').startOf('day');
 
-  SCHEDULE.split(';').forEach(function(e, idx) {
+  SCHEDULE.split(';').forEach(function(e) {
     var entry = e.split(':');
     var day = +entry[0];
     var cardId = entry[1];
