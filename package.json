@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.9.6",
-    "moment": "^2.9.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.3.0",
     "node-trello": "^1.0.1"
   }
